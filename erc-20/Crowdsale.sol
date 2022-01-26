@@ -30,9 +30,9 @@ contract Crowdsale{
     //생성자
     constructor(){
         //토큰주소.
-        token = 0x75c5D4F243956572d9c980450A38C6c8f86c1B6D;               
+        token = 0x20B78b5032422d6Bceea656fD61525809D27A1e9;               
         rate = 1;         
-        deadline = block.timestamp + (10 * 60 ) ;
+        deadline = block.timestamp + (24 * 60 * 60) ;
         //require(_rate > 0);
         //require(token != address(0));    
     }
