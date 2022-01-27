@@ -13,18 +13,17 @@ contract ERC20 is IERC20{
     //토큰의 전채 양을 가지고있을 변수
     uint256 private _totalSupply;
     //토큰 이름을 반환한다.
-    string public  _name;
-     // 토큰 이름을 줄여서 표현한것을 반환. 
-    string public  _symbol;
+    string public  name;
+     // 토큰 이름을 줄여서 표현한것을 반환.
+    string public  symbol;
       //사용자 표현을 위한 소숫자리수 변환.
-    uint8 public _decimals;
+    //uint8 public decimals;
 
-    constructor() {                 
-        _name = "jhpark Token";
-        _symbol = "JHT6" ;          
-        _decimals = 18;
-
-        _mint(msg.sender, 1000 * (10 ** _decimals));                
+    constructor(string memory _name , string memory _symbol, uint8 _decimals, uint256 totalSupply_) {                 
+        name = _name;
+        symbol = _symbol;
+        //decimals =  _decimals;
+        _mint(msg.sender, totalSupply_ * (10 ** _decimals));                
     }
 
     //존재하는 토큰의 양을 반환.
@@ -55,7 +54,6 @@ contract ERC20 is IERC20{
 
     //sender 주소에서 to주소로 위임양 넘지 않는 범위에서 전송.
     function transferFrom(address sender, address to ,uint256 amount) public  override(IERC20) returns (bool){
-
         
         //sender 토큰에 대해서 현재 위임량은 얼마인지.
         uint256 currentAllowance = _allowances[sender][msg.sender];
@@ -82,15 +80,12 @@ contract ERC20 is IERC20{
         emit Transfer(address(0), account,amount);
     }
 
-    //실제 sender에서 recipient로 amount 전송.
+    //실제 from에서 to amount 전송.
     function _transfer(address from, address to, uint256 amount) private {
         require(from != address(0), "ERC20: transfer from the zero address");
         require(to != address(0), "ERC20: transfer to the zero address");
-        
-        uint256 fromBalance = _balances[from];
-        require(fromBalance >= amount,"ERC20: transfer amount exceeds balance");
-                       
-        _balances[from] = fromBalance - amount;        
+              
+        _balances[from] -=  amount;        
         _balances[to] += amount;
         
         emit Transfer(from, to, amount);

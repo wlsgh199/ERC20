@@ -18,7 +18,7 @@ contract Crowdsale{
     // 세일즈 마감여부
     bool private salesClosed = false;  
     //얼마나 진행할건지 할건지 시간 설정.
-    uint256 private deadline;   
+    uint256 private deadline;
 
     //토큰 구매 이벤트
     event TokenPurchase(
@@ -28,11 +28,14 @@ contract Crowdsale{
     );
     
     //생성자
-    constructor(){
+    constructor(address _token, uint256 _rate , uint256 _deadline){
         //토큰주소.
-        token = 0x20B78b5032422d6Bceea656fD61525809D27A1e9;               
-        rate = 1;         
-        deadline = block.timestamp + (24 * 60 * 60) ;
+        token = _token;
+        rate = _rate;
+        deadline = _deadline + block.timestamp;
+        // token = 0x77C37cE27A4463c1855899353340bC967ceeeDBB;               
+        // rate = 1;         
+        // deadline = block.timestamp + (24 * 60 * 60) ;
         //require(_rate > 0);
         //require(token != address(0));    
     }

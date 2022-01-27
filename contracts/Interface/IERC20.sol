@@ -9,8 +9,7 @@ interface IERC20{
     //토큰이 한 계정에서 다른계정으로 이동할때 이벤트 발생용도.
     //이벤트를 검색할때 indexed 는 나중에 필터해서 볼수있습니다. 아니면 전체가다보임 
     event Transfer(address indexed from, address indexed to, uint256 value);
-    event Approval(address indexed owner, address indexed spender, uint256 value);
-
+    event Approval(address indexed owner, address indexed spender, uint256 value);    
 
     //view :  storage state 를 읽을 수 있지만, state 값을 변경할 수 없다. 즉 읽기만 가능합니다.
     //function 밖의 변수들을 읽을수 있으나 변경 불가능
@@ -33,3 +32,4 @@ interface IERC20{
     //sender 주소에서 to주소로 얼마만큼 보내는 기능.
     function transferFrom(address sender, address to ,uint256 amount) external returns (bool);
 }
+

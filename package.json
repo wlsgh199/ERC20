@@ -1,0 +1,10 @@
+{
+  "name": "hardhat-project",
+  "devDependencies": {
+    "ethers": "^5.5.3"
+  },
+  "dependencies": {
+    "@nomiclabs/hardhat-waffle": "^2.0.2",
+    "@remix-project/remixd": "^0.5.5"
+  }
+}
