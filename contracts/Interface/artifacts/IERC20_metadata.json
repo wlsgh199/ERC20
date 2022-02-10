@@ -6,27 +6,6 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [
-					{
-						"internalType": "string",
-						"name": "_name",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "_symbol",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "totalSupply_",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
 				"anonymous": false,
 				"inputs": [
 					{
@@ -145,45 +124,6 @@
 			},
 			{
 				"inputs": [],
-				"name": "decimals",
-				"outputs": [
-					{
-						"internalType": "uint8",
-						"name": "",
-						"type": "uint8"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "name",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "symbol",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "",
-						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
 				"name": "totalSupply",
 				"outputs": [
 					{
@@ -197,11 +137,6 @@
 			},
 			{
 				"inputs": [
-					{
-						"internalType": "address",
-						"name": "from",
-						"type": "address"
-					},
 					{
 						"internalType": "address",
 						"name": "to",
@@ -267,7 +202,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/ERC20.sol": "ERC20"
+			"contracts/Interface/IERC20.sol": "IERC20"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -281,20 +216,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/ERC20.sol": {
-			"keccak256": "0x29faaf219f33a8fbf1411ae97684768eb5c96bfbfbacbc7f49c547ff96d79962",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://09da59a4c63f7b927a0b4ffd4c19f58527451ebad02870f4e145108632e3336c",
-				"dweb:/ipfs/QmS8QDva4AgqNKQjgv3ruHSwFD4KCPHdZSWiQvAxrNdUG5"
-			]
-		},
 		"contracts/Interface/IERC20.sol": {
-			"keccak256": "0xd970e83b9c5767028cc92bb446bb8cb5853ee4c3007ab8e4242e3ed133a8d092",
+			"keccak256": "0xa79d32d0f0438351b199f46492b7de9e31f1f951fa7f904890891661ee71f980",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://ab0f5c62e384a987fe96440f990c699206468c653b3c4a652f667e29e9843e73",
-				"dweb:/ipfs/QmQNfJFLbrSvgGRYnabxgPRCXcwdeAjCKft8drPL7mYxN8"
+				"bzz-raw://25c9ba9543f2b8392b72f67bbc6e7bbc68ed7011ed4a8e5f74248423d11653ee",
+				"dweb:/ipfs/QmUUdF26SNMEnxqyHPVUvT3se94zGQGW87pWEaSuJCX4wx"
 			]
 		}
 	},

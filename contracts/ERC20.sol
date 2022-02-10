@@ -17,14 +17,15 @@ contract ERC20 is IERC20{
      // 토큰 이름을 줄여서 표현한것을 반환.
     string public  symbol;
       //사용자 표현을 위한 소숫자리수 변환.
-    //uint8 public decimals;
+    uint8 public constant decimals = 18;
 
-    constructor(string memory _name , string memory _symbol, uint8 _decimals, uint256 totalSupply_) {                 
+    constructor(string memory _name , string memory _symbol, uint256 totalSupply_) {                 
         name = _name;
         symbol = _symbol;
         //decimals =  _decimals;
-        _mint(msg.sender, totalSupply_ * (10 ** _decimals));                
+        _mint(msg.sender, totalSupply_ * (10 ** decimals));                
     }
+
 
     //존재하는 토큰의 양을 반환.
     function totalSupply() public view override(IERC20)  returns (uint256){
@@ -57,14 +58,12 @@ contract ERC20 is IERC20{
         
         //sender 토큰에 대해서 현재 위임량은 얼마인지.
         uint256 currentAllowance = _allowances[sender][msg.sender];
+      
+        //현재 허용된 잔액보다 보내는금액이 크면 에러.                        
+        //require(currentAllowance >= amount, "ERC20: transfer amount exceeds allowance");           
 
-        if (currentAllowance != type(uint256).max) {
-            //현재 허용된 잔액보다 보내는금액이 크면 에러.                        
-            require(currentAllowance >= amount, "ERC20: transfer amount exceeds allowance");           
-
-             _approve(sender, msg.sender, currentAllowance - amount);            
-
-        }
+        _approve(sender, msg.sender, currentAllowance - amount);            
+        
         _transfer(sender, to, amount);
 
         return true;
@@ -72,7 +71,7 @@ contract ERC20 is IERC20{
 
     //토큰을 생성하여 account에 할당.
     function _mint(address account ,uint256 amount) private {
-        require(account != address(0), "ERC20: mint to the zero address");
+        //require(account != address(0), "ERC20: mint to the zero address");
 
         _totalSupply += amount;
         _balances[account] += amount;
@@ -82,8 +81,8 @@ contract ERC20 is IERC20{
 
     //실제 from에서 to amount 전송.
     function _transfer(address from, address to, uint256 amount) private {
-        require(from != address(0), "ERC20: transfer from the zero address");
-        require(to != address(0), "ERC20: transfer to the zero address");
+        //require(from != address(0), "ERC20: transfer from the zero address");
+        //require(to != address(0), "ERC20: transfer to the zero address");
               
         _balances[from] -=  amount;        
         _balances[to] += amount;
@@ -93,8 +92,8 @@ contract ERC20 is IERC20{
 
      //owner 토큰을 spender 얼마나 쓸수있는지. 즉  위임량 설정.
     function _approve(address owner, address spender, uint256 amount) private {
-        require(owner != address(0),"ERC20: approve owner the zero address");
-        require(spender != address(0),"ERC20: approve spender the zero address");        
+        //require(owner != address(0),"ERC20: approve owner the zero address");
+        //require(spender != address(0),"ERC20: approve spender the zero address");        
         _allowances[owner][spender] = amount;
         emit Approval(owner,spender,amount);
     }

@@ -1,0 +1,158 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_rate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_deadline",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "purchaser",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "TokenPurchase",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "etherSend",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "rate",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "tokenAmount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "weiRaised",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Crowdsale.sol": "Crowdsale"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Crowdsale.sol": {
+			"keccak256": "0x7d1839a7aa88057a41cb1017c6da2da6110c27ceced9fd16d05db322fb95d7db",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://16c0d694cbc41b778ef8c5874535c1bc745ccb2e9ec50c00ded1d51d63bc4f1d",
+				"dweb:/ipfs/QmNaWtyNAx3du9G2daX99sBie9FRxmvrZkazCUpKpa2LCs"
+			]
+		},
+		"contracts/ERC20.sol": {
+			"keccak256": "0x29faaf219f33a8fbf1411ae97684768eb5c96bfbfbacbc7f49c547ff96d79962",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://09da59a4c63f7b927a0b4ffd4c19f58527451ebad02870f4e145108632e3336c",
+				"dweb:/ipfs/QmS8QDva4AgqNKQjgv3ruHSwFD4KCPHdZSWiQvAxrNdUG5"
+			]
+		},
+		"contracts/Interface/IERC20.sol": {
+			"keccak256": "0xd970e83b9c5767028cc92bb446bb8cb5853ee4c3007ab8e4242e3ed133a8d092",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ab0f5c62e384a987fe96440f990c699206468c653b3c4a652f667e29e9843e73",
+				"dweb:/ipfs/QmQNfJFLbrSvgGRYnabxgPRCXcwdeAjCKft8drPL7mYxN8"
+			]
+		}
+	},
+	"version": 1
+}
