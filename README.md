@@ -4,9 +4,7 @@
 
 `this contract` docgen test.
 
-_all function calls are currentlu implement without side effects
-
-@dev_
+_all function calls are currentlu implement without side effects_
 
 ### Transfer
 
