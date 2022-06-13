@@ -17,12 +17,10 @@ contract docgen_test{
 event Transfer(address from, address to, uint256 value)
 ```
 
-to 받는사람 주소
-
 | Name | Type | Description |
 | ---- | ---- | ----------- |
 | from | address |  |
-| to | address |  |
+| to | address | 받는사람 주소 |
 | value | uint256 | 보낼양         event Transfer(address indexed from, address indexed to, uint256 value);          constructor(uint256 a1){             } |
 
 ### constructor
