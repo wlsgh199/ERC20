@@ -2,7 +2,7 @@
 
 ## docgen_test
 
-this contract docgen test.
+`this contract` docgen test.
 
 _all function calls are currentlu implement without side effects_
 
