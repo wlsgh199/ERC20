@@ -1,45 +1,74 @@
 # Solidity API
 
-## docgen_test
+## Tree
 
-이 컨트랙트는 docgen 테스트용으로 만들었습니다.
-test 토큰을 보낼때 발생하는 이벤트입니다.
-    /
+You can use this contract for only the most basic simulation
 
-_개발자에게 추가 세부정보를 설명할때.
-contract docgen_test{_
+_All function calls are currently implemented without side effects_
 
-### Transfer
+### age
 
 ```solidity
-event Transfer(address from, address to, uint256 value)
+function age(uint256 rings) external pure virtual returns (uint256)
 ```
 
-er address
+Calculate tree age in years, rounded up, for live trees
+
+_The Alexandr N. Tetearing algorithm could increase precision_
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| from | address |  |
-| to | address | test 받는사람 주소 |
-| value | uint256 | test 보낼양         event Transfer(address indexed from, address indexed to, uint256 value);          constructor(uint256 a1){             } |
+| rings | uint256 | The number of rings from dendrochronological sample |
 
-### constructor
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| [0] | uint256 | Age in years, rounded up for partial years |
 
-```solidity
-constructor(uint256 a1) public
-```
-
-### transfer
+### leaves
 
 ```solidity
-function transfer(address to, uint256 amount) public pure returns (bool)
+function leaves() external pure virtual returns (uint256)
 ```
 
-allowances. See {Transfer}.
-/
-    function transfer(address to, uint256 amount) public pure returns (bool){
-        return true;
-    }
+Returns the amount of leaves the tree has.
 
-}
+_Returns only a fixed number._
+
+## Plant
+
+### leaves
+
+```solidity
+function leaves() external pure virtual returns (uint256)
+```
+
+## KumquatTree
+
+### age
+
+```solidity
+function age(uint256 rings) external pure returns (uint256)
+```
+
+Calculate tree age in years, rounded up, for live trees
+
+_The Alexandr N. Tetearing algorithm could increase precision_
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| rings | uint256 | The number of rings from dendrochronological sample |
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| [0] | uint256 | Age in years, rounded up for partial years |
+
+### leaves
+
+```solidity
+function leaves() external pure returns (uint256)
+```
+
+Return the amount of leaves that this specific kind of tree has
+
+_Returns only a fixed number._
 
