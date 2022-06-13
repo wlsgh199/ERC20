@@ -1,74 +1,45 @@
 # Solidity API
 
-## Tree
+## docgen_test
 
-You can use this contract for only the most basic simulation
+this contract docgen test.
 
-_All function calls are currently implemented without side effects_
+_all function calls are currentlu implement without side effects_
 
-### age
+### Transfer
 
 ```solidity
-function age(uint256 rings) external pure virtual returns (uint256)
+event Transfer(address from, address to, uint256 value)
 ```
 
-Calculate tree age in years, rounded up, for live trees
-
-_The Alexandr N. Tetearing algorithm could increase precision_
+token transfer event.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| rings | uint256 | The number of rings from dendrochronological sample |
+| from | address | sender address |
+| to | address | receiver address |
+| value | uint256 | amount |
+
+### constructor
+
+```solidity
+constructor(uint256 a1) public
+```
+
+### transfer
+
+```solidity
+function transfer(address to, uint256 amount) public pure returns (bool)
+```
+
+토큰을 보낼때 사용합니다.
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| [0] | uint256 | Age in years, rounded up for partial years |
-
-### leaves
-
-```solidity
-function leaves() external pure virtual returns (uint256)
-```
-
-Returns the amount of leaves the tree has.
-
-_Returns only a fixed number._
-
-## Plant
-
-### leaves
-
-```solidity
-function leaves() external pure virtual returns (uint256)
-```
-
-## KumquatTree
-
-### age
-
-```solidity
-function age(uint256 rings) external pure returns (uint256)
-```
-
-Calculate tree age in years, rounded up, for live trees
-
-_The Alexandr N. Tetearing algorithm could increase precision_
+| to | address | 받는사람 주소 |
+| amount | uint256 | 보낼양 |
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| rings | uint256 | The number of rings from dendrochronological sample |
-
-| Name | Type | Description |
-| ---- | ---- | ----------- |
-| [0] | uint256 | Age in years, rounded up for partial years |
-
-### leaves
-
-```solidity
-function leaves() external pure returns (uint256)
-```
-
-Return the amount of leaves that this specific kind of tree has
-
-_Returns only a fixed number._
+| [0] | bool | 성공 or 실패 여부     function transfer(address to, uint256 amount) p |
 
