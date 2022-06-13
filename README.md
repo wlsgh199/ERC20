@@ -32,14 +32,14 @@ constructor(uint256 a1) public
 function transfer(address to, uint256 amount) public pure returns (bool)
 ```
 
-토큰을 보낼때 사용합니다.
+token send
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| to | address | 받는사람 주소 |
-| amount | uint256 | 보낼양 |
+| to | address | receiver address |
+| amount | uint256 | send value |
 
 | Name | Type | Description |
 | ---- | ---- | ----------- |
-| [0] | bool | 성공 or 실패 여부     function transfer(address to, uint256 amount) p |
+| [0] | bool | true or false. |
 
