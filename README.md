@@ -22,7 +22,13 @@ to 받는사람 주소
 | ---- | ---- | ----------- |
 | from | address |  |
 | to | address |  |
-| value | uint256 | 보낼양     event Transfer(address indexed from, address indexed to, uint256 value);          // constructor(uint256 a1){             // } |
+| value | uint256 | 보낼양     event Transfer(address indexed from, address indexed to, uint256 value);          constructor(uint256 a1){             } |
+
+### constructor
+
+```solidity
+constructor(uint256 a1) public
+```
 
 ### transfer
 
@@ -30,7 +36,10 @@ to 받는사람 주소
 function transfer(address to, uint256 amount) public pure returns (bool)
 ```
 
-int256 amount) public pure returns (bool){
+setting
+allowances. See {docgen_test}.
+/
+    function transfer(address to, uint256 amount) public pure returns (bool){
         return true;
     }
 
