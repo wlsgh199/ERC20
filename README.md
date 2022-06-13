@@ -26,6 +26,12 @@ token transfer event.
 constructor(uint256 a1) public
 ```
 
+create contract
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| a1 | uint256 | test |
+
 ### transfer
 
 ```solidity
